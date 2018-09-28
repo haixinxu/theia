@@ -1,6 +1,9 @@
 # theia
 FROM ubuntu:bionic
 
+RUN apt update && \
+    apt install -y openssh git bash curl
+
 #install node v8 and yarn
 
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash && \
@@ -24,9 +27,6 @@ RUN chmod g+rw /home && \
     mkdir -p /home/project && \
     chown -R theia:theia /home/theia && \
     chown -R theia:theia /home/project
-
-RUN apt update && \
-    apt install -y openssh git bash
 
 EXPOSE 3000
 ENV SHELL /bin/bash
