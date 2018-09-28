@@ -2,7 +2,7 @@
 FROM ubuntu:bionic
 
 RUN apt update && \
-    apt install -y openssh git bash curl
+    apt install -y openssh-server openssh-client  git bash curl
 
 #install node v8 and yarn
 
