@@ -154,5 +154,6 @@ RUN yarn --cache-folder ./ycache && rm -rf ./ycache
 RUN yarn theia build
 EXPOSE 3000
 ENV SHELL /bin/bash
+VOLUME /home/project
 
 CMD [ "yarn", "theia", "start", "/home/project", "--hostname=0.0.0.0" ]
