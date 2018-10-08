@@ -138,7 +138,8 @@ RUN adduser --disabled-password --gecos '' theia && \
 RUN chmod g+rw /home && \
   mkdir -p /home/project && \
   chown -R theia:theia /home/theia && \
-  chown -R theia:theia /home/project;
+  chown -R theia:theia /home/project; && \
+  ln -s /home/project/.application-module-loader.js /home/theia/.application-module-loader.js
 
 #Theia
 ##Needed for node-gyp, nsfw build
